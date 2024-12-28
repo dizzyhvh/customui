@@ -1100,7 +1100,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					Size = UDim2.new(1, 0, 1, 0)
 				})
 
-				local DropdownFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 5), {
+				local DropdownFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(38, 0, 255), 0, 5), {
 					Size = UDim2.new(1, 0, 0, 38),
 					Parent = ItemParent,
 					ClipsDescendants = true
