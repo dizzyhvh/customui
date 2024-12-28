@@ -18,7 +18,7 @@ local OrionLib = {
 			Stroke = Color3.fromRGB(255, 253, 122),
 			Divider = Color3.fromRGB(255, 177, 59),
 			Text = Color3.fromRGB(221, 221, 221),
-			TextDark = Color3.fromRGB(163, 163, 163)
+			TextDark = Color3.fromRGB(209, 209, 209)
 		}
 	},
 	SelectedTheme = "Default",
@@ -1088,7 +1088,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				local DropdownList = MakeElement("List")
 
-				local DropdownContainer = AddThemeObject(SetProps(SetChildren(MakeElement("ScrollFrame", Color3.fromRGB(40, 40, 40), 4), {
+				local DropdownContainer = AddThemeObject(SetProps(SetChildren(MakeElement("ScrollFrame", Color3.fromRGB(255, 228, 77), 4), {
 					DropdownList
 				}), {
 					Parent = ItemParent,
