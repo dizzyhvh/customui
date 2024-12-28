@@ -13,12 +13,12 @@ local OrionLib = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(255, 34, 34),
-			Second = Color3.fromRGB(255, 115, 0),
-			Stroke = Color3.fromRGB(255, 253, 122),
-			Divider = Color3.fromRGB(255, 177, 59),
-			Text = Color3.fromRGB(255, 255, 255),
-			TextDark = Color3.fromRGB(255, 255, 255)
+			Main = Color3.fromRGB(148, 34, 255),
+			Second = Color3.fromRGB(160, 59, 255),
+			Stroke = Color3.fromRGB(115, 40, 255),
+			Divider = Color3.fromRGB(183, 0, 255),
+			Text = Color3.fromRGB(51, 5, 255),
+			TextDark = Color3.fromRGB(110, 70, 255)
 		}
 	},
 	SelectedTheme = "Default",
@@ -384,14 +384,14 @@ function OrionLib:MakeNotification(NotificationConfig)
 			Parent = NotificationHolder
 		})
 
-		local NotificationFrame = SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 126, 52), 0, 10), {
+		local NotificationFrame = SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(123, 52, 255), 0, 10), {
 			Parent = NotificationParent, 
 			Size = UDim2.new(1, 0, 0, 0),
 			Position = UDim2.new(1, -55, 0, 0),
 			BackgroundTransparency = 0,
 			AutomaticSize = Enum.AutomaticSize.Y
 		}), {
-			MakeElement("Stroke", Color3.fromRGB(255, 67, 67), 1.2),
+			MakeElement("Stroke", Color3.fromRGB(164, 67, 255), 1.2),
 			MakeElement("Padding", 12, 12, 12, 12),
 			SetProps(MakeElement("Image", NotificationConfig.Image), {
 				Size = UDim2.new(0, 20, 0, 20),
@@ -898,7 +898,7 @@ function OrionLib:MakeWindow(WindowConfig)
 				ToggleConfig.Name = ToggleConfig.Name or "Toggle"
 				ToggleConfig.Default = ToggleConfig.Default or false
 				ToggleConfig.Callback = ToggleConfig.Callback or function() end
-				ToggleConfig.Color = ToggleConfig.Color or Color3.fromRGB(195, 9, 9)
+				ToggleConfig.Color = ToggleConfig.Color or Color3.fromRGB(59, 9, 195)
 				ToggleConfig.Flag = ToggleConfig.Flag or nil
 				ToggleConfig.Save = ToggleConfig.Save or false
 
@@ -922,7 +922,7 @@ function OrionLib:MakeWindow(WindowConfig)
 						Size = UDim2.new(0, 20, 0, 20),
 						AnchorPoint = Vector2.new(0.5, 0.5),
 						Position = UDim2.new(0.5, 0, 0.5, 0),
-						ImageColor3 = Color3.fromRGB(255, 235, 51),
+						ImageColor3 = Color3.fromRGB(255, 0, 0),
 						Name = "Ico"
 					}),
 				})
