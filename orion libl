@@ -17,7 +17,7 @@ local OrionLib = {
 			Stroke = Color3.fromRGB(186, 85, 211), -- Medium Orchid
 			Divider = Color3.fromRGB(216, 191, 216), -- Thistle
 			Text = Color3.fromRGB(255, 255, 255), -- Dark Orchid
-			TextDark = Color3.fromRGB(138, 43, 226) -- Blue Violet
+			TextDark = Color3.fromRGB(235, 235, 235) -- Blue Violet
 		}
 	},
 	SelectedTheme = "Default",
