@@ -15,7 +15,7 @@ local OrionLib = {
 		Default = {
 			Main = Color3.fromRGB(255, 34, 34),
 			Second = Color3.fromRGB(255, 115, 0),
-			Stroke = Color3.fromRGB(255, 252, 90),
+			Stroke = Color3.fromRGB(255, 253, 122),
 			Divider = Color3.fromRGB(255, 177, 59),
 			Text = Color3.fromRGB(221, 221, 221),
 			TextDark = Color3.fromRGB(163, 163, 163)
@@ -464,8 +464,8 @@ function OrionLib:MakeWindow(WindowConfig)
 	WindowConfig.IntroText = WindowConfig.IntroText or "Forest Fire"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
-	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://75056443767661"
-	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://75056443767661"
+	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
+	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://8834748103"
 	OrionLib.Folder = WindowConfig.ConfigFolder
 	OrionLib.SaveCfg = WindowConfig.SaveConfig
 
@@ -475,7 +475,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		end	
 	end
 
-	local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 4), {
+	local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 120, 57), 4), {
 		Size = UDim2.new(1, 0, 1, -50)
 	}), {
 		MakeElement("List"),
