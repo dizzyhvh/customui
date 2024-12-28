@@ -69,18 +69,6 @@ local function AddConnection(Signal, Function)
 	return SignalConnect
 end
 
--- The rest of the script retains the same functionality but adapts colors to purple theme.
-
-
-local function AddConnection(Signal, Function)
-	if (not OrionLib:IsRunning()) then
-		return
-	end
-	local SignalConnect = Signal:Connect(Function)
-	table.insert(OrionLib.Connections, SignalConnect)
-	return SignalConnect
-end
-
 task.spawn(function()
 	while (OrionLib:IsRunning()) do
 		wait()
@@ -179,23 +167,6 @@ local function ReturnProperty(Object)
 	if Object:IsA("ImageLabel") or Object:IsA("ImageButton") then
 		return "ImageColor3"
 	end   
-end
-
-local function AddThemeObject(Object, Type)
-	if not OrionLib.ThemeObjects[Type] then
-		OrionLib.ThemeObjects[Type] = {}
-	end    
-	table.insert(OrionLib.ThemeObjects[Type], Object)
-	Object[ReturnProperty(Object)] = OrionLib.Themes[OrionLib.SelectedTheme][Type]
-	return Object
-end    
-
-local function SetTheme()
-	for Name, Type in pairs(OrionLib.ThemeObjects) do
-		for _, Object in pairs(Type) do
-			Object[ReturnProperty(Object)] = OrionLib.Themes[OrionLib.SelectedTheme][Name]
-		end    
-	end    
 end
 
 local function PackColor(Color)
@@ -412,7 +383,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Size = UDim2.new(1, -30, 0, 20),
 				Position = UDim2.new(0, 30, 0, 0),
 				Font = Enum.Font.GothamBold,
-                TextColor3 = Color3.fromRGB(177, 59, 255),
+                TextColor3 = Color3.fromRGB(153, 0, 255),
 				Name = "Title"
 			}),
 			SetProps(MakeElement("Label", NotificationConfig.Content, 14), {
@@ -421,7 +392,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Font = Enum.Font.GothamSemibold,
 				Name = "Content",
 				AutomaticSize = Enum.AutomaticSize.Y,
-				TextColor3 = Color3.fromRGB(177, 59, 255),
+				TextColor3 = Color3.fromRGB(153, 0, 255),
 				TextWrapped = true
 			})
 		})
