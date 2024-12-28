@@ -1,4 +1,3 @@
-
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -13,12 +12,12 @@ local OrionLib = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(148, 34, 255),
-			Second = Color3.fromRGB(160, 59, 255),
-			Stroke = Color3.fromRGB(115, 40, 255),
-			Divider = Color3.fromRGB(183, 0, 255),
-			Text = Color3.fromRGB(51, 5, 255),
-			TextDark = Color3.fromRGB(110, 70, 255)
+			Main = Color3.fromRGB(128, 0, 128), -- Dark Purple
+			Second = Color3.fromRGB(148, 0, 211), -- Deep Purple
+			Stroke = Color3.fromRGB(186, 85, 211), -- Medium Orchid
+			Divider = Color3.fromRGB(216, 191, 216), -- Thistle
+			Text = Color3.fromRGB(153, 50, 204), -- Dark Orchid
+			TextDark = Color3.fromRGB(138, 43, 226) -- Blue Violet
 		}
 	},
 	SelectedTheme = "Default",
@@ -28,7 +27,7 @@ local OrionLib = {
 
 local function GetIcon(IconName)
 	return nil
-end   
+end
 
 local Orion = Instance.new("ScreenGui")
 Orion.Name = "Orion"
@@ -59,8 +58,31 @@ function OrionLib:IsRunning()
 	else
 		return Orion.Parent == game:GetService("CoreGui")
 	end
-
 end
+
+local function AddConnection(Signal, Function)
+	if (not OrionLib:IsRunning()) then
+		return
+	end
+	local SignalConnect = Signal:Connect(Function)
+	table.insert(OrionLib.Connections, SignalConnect)
+	return SignalConnect
+end
+
+-- Example of adjustments for purple theme while keeping white untouched:
+local function AddThemeObject(Object, Type)
+	if not OrionLib.ThemeObjects[Type] then
+		OrionLib.ThemeObjects[Type] = {}
+	end
+	table.insert(OrionLib.ThemeObjects[Type], Object)
+	if ReturnProperty(Object) ~= "BackgroundColor3" or (Object.BackgroundColor3 ~= Color3.fromRGB(255, 255, 255)) then
+		Object[ReturnProperty(Object)] = OrionLib.Themes[OrionLib.SelectedTheme][Type]
+	end
+	return Object
+end
+
+-- The rest of the script retains the same functionality but adapts colors to purple theme.
+
 
 local function AddConnection(Signal, Function)
 	if (not OrionLib:IsRunning()) then
@@ -410,7 +432,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Font = Enum.Font.GothamSemibold,
 				Name = "Content",
 				AutomaticSize = Enum.AutomaticSize.Y,
-				TextColor3 = Color3.fromRGB(255, 235, 59),
+				TextColor3 = Color3.fromRGB(177, 59, 255),
 				TextWrapped = true
 			})
 		})
@@ -475,7 +497,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		end	
 	end
 
-	local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 120, 57), 4), {
+	local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(143, 57, 255), 4), {
 		Size = UDim2.new(1, 0, 1, -50)
 	}), {
 		MakeElement("List"),
@@ -922,7 +944,7 @@ function OrionLib:MakeWindow(WindowConfig)
 						Size = UDim2.new(0, 20, 0, 20),
 						AnchorPoint = Vector2.new(0.5, 0.5),
 						Position = UDim2.new(0.5, 0, 0.5, 0),
-						ImageColor3 = Color3.fromRGB(255, 0, 0),
+						ImageColor3 = Color3.fromRGB(255, 255, 255),
 						Name = "Ico"
 					}),
 				})
@@ -1088,7 +1110,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				local DropdownList = MakeElement("List")
 
-				local DropdownContainer = AddThemeObject(SetProps(SetChildren(MakeElement("ScrollFrame", Color3.fromRGB(255, 228, 77), 4), {
+				local DropdownContainer = AddThemeObject(SetProps(SetChildren(MakeElement("ScrollFrame", Color3.fromRGB(175, 77, 255), 4), {
 					DropdownList
 				}), {
 					Parent = ItemParent,
@@ -1149,7 +1171,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				local function AddOptions(Options)
 					for _, Option in pairs(Options) do
-						local OptionBtn = AddThemeObject(SetProps(SetChildren(MakeElement("Button", Color3.fromRGB(40, 40, 40)), {
+						local OptionBtn = AddThemeObject(SetProps(SetChildren(MakeElement("Button", Color3.fromRGB(153, 0, 255)), {
 							MakeElement("Corner", 0, 6),
 							AddThemeObject(SetProps(MakeElement("Label", Option, 13, 0.4), {
 								Position = UDim2.new(0, 8, 0, 0),
