@@ -15,10 +15,10 @@ local OrionLib = {
 		Default = {
 			Main = Color3.fromRGB(255, 34, 34),
 			Second = Color3.fromRGB(255, 115, 0),
-			Stroke = Color3.fromRGB(255, 251, 42),
+			Stroke = Color3.fromRGB(255, 252, 90),
 			Divider = Color3.fromRGB(255, 177, 59),
-			Text = Color3.fromRGB(255, 124, 124),
-			TextDark = Color3.fromRGB(172, 94, 94)
+			Text = Color3.fromRGB(221, 221, 221),
+			TextDark = Color3.fromRGB(163, 163, 163)
 		}
 	},
 	SelectedTheme = "Default",
@@ -346,7 +346,7 @@ end)
 CreateElement("Label", function(Text, TextSize, Transparency)
 	local Label = Create("TextLabel", {
 		Text = Text or "",
-		TextColor3 = Color3.fromRGB(240, 240, 240),
+		TextColor3 = Color3.fromRGB(207, 207, 207),
 		TextTransparency = Transparency or 0,
 		TextSize = TextSize or 15,
 		Font = Enum.Font.Gotham,
@@ -454,18 +454,18 @@ function OrionLib:MakeWindow(WindowConfig)
 	local UIHidden = false
 
 	WindowConfig = WindowConfig or {}
-	WindowConfig.Name = WindowConfig.Name or "Orion Library"
+	WindowConfig.Name = WindowConfig.Name or "Forest Fire"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
 	WindowConfig.SaveConfig = WindowConfig.SaveConfig or false
 	WindowConfig.HidePremium = WindowConfig.HidePremium or false
 	if WindowConfig.IntroEnabled == nil then
 		WindowConfig.IntroEnabled = true
 	end
-	WindowConfig.IntroText = WindowConfig.IntroText or "Orion Library"
+	WindowConfig.IntroText = WindowConfig.IntroText or "Forest Fire"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
-	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
-	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://8834748103"
+	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://75056443767661"
+	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://75056443767661"
 	OrionLib.Folder = WindowConfig.ConfigFolder
 	OrionLib.SaveCfg = WindowConfig.SaveConfig
 
