@@ -19,8 +19,8 @@ local OrionLib = {
 			Second = Color3.fromRGB(255, 94, 0), -- Deep Purple
 			Stroke = Color3.fromRGB(176, 85, 33), -- Medium Orchid
 			Divider = Color3.fromRGB(176, 85, 33), -- Thistle
-			Text = Color3.fromRGB(247, 119, 6), -- Dark Orchid
-			TextDark = Color3.fromRGB(204, 100, 9) -- Blue Violet
+			Text = Color3.fromRGB(255, 221, 0), -- Dark Orchid
+			TextDark =Color3.fromRGB(199, 174, 14), -- Blue Violet
 		}
 	},
 	SelectedTheme = "Default",
@@ -468,6 +468,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
 	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
 	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://8834748103"
+    WindowConfig.Font = CColor3.fromRGB(255, 0, 0)
 	OrionLib.Folder = WindowConfig.ConfigFolder
 	OrionLib.SaveCfg = WindowConfig.SaveConfig
 
@@ -1025,7 +1026,7 @@ function OrionLib:MakeWindow(WindowConfig)
 					SliderDrag
 				})
 
-				local SliderFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 255, 255), 0, 4), {
+				local SliderFrame = AddThemeObject(SetChildren(SetProps(MakeElement("RoundFrame", Color3.fromRGB(255, 60, 0), 255), 0, 4), {
 					Size = UDim2.new(1, 0, 0, 65),
 					Parent = ItemParent
 				}), {
