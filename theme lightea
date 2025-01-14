@@ -15,8 +15,8 @@ local OrionLib = {
 	Flags = {},
 	Themes = {
 		Default = {
-			Main = Color3.fromRGB(171, 157, 157), -- Dark Purple
-			Second = Color3.fromRGB(207, 194, 194), -- Deep Purple
+			Main = Color3.fromRGB(207, 194, 194), -- Dark Purple
+			Second = Color3.fromRGB(171, 157, 157), -- Deep Purple
 			Stroke = Color3.fromRGB(148, 132, 132), -- Medium Orchid
 			Divider = Color3.fromRGB(94, 88, 88), -- Thistle
 			Text = Color3.fromRGB(43, 42, 42), -- Dark Orchid
@@ -412,7 +412,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Font = font,
 				Name = "Content",
 				AutomaticSize = Enum.AutomaticSize.Y,
-				TextColor3 = Color3.fromRGB(241, 241, 241),
+				TextColor3 = Color3.fromRGB(59, 58, 58),
 				TextWrapped = true
 			})
 		})
