@@ -6,7 +6,7 @@ local Mouse = LocalPlayer:GetMouse()
 local HttpService = game:GetService("HttpService")
 
 
-local font = Font.new([[rbxasset://fonts/families/Fondamento.json]], Enum.FontWeight.Bold, Enum.FontStyle.Italic)
+local font = Enum.Font.FredokaOne
 
 local OrionLib = {
 	Elements = {},
