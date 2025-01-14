@@ -412,7 +412,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Font = font,
 				Name = "Content",
 				AutomaticSize = Enum.AutomaticSize.Y,
-				TextColor3 = Color3.fromRGB(0, 217, 255),
+				TextColor3 = Color3.fromRGB(241, 241, 241),
 				TextWrapped = true
 			})
 		})
